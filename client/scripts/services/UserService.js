@@ -14,7 +14,7 @@
  		}
 
  		factory.update = function(user){
- 			var promise = $http.put(URL+'/'+user.id)
+ 			var promise = $http.put(URL+'/'+user.id,user)
 
  			promise.then(function(response){
  				alert("update was successfull");

@@ -7,7 +7,8 @@ angular.module('forumX').directive('postPanel', function () {
         templateUrl: 'views/directives/post_panel.html',
         replace: true,
         scope: {
-            postInfo: '='
+            postInfo: '=',
+            showImg: '='
         }
     }
 });

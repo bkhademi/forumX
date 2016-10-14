@@ -1,0 +1,146 @@
+<div class="container">
+    <div class="page page-profile">
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="panel panel-profile">
+                    <div class="panel-heading text-center panel-background">
+                        <img alt="" src="images/g1.jpg" class="img-circle" width="110" height="110">
+                        <h3>{{userName}}</h3>
+                        <p>Blogger</p>
+                    </div>
+                    <div class="list-justified-container">
+                        <ul class="list-justified text-center">
+                            <li>
+                                <h4>679</h4>
+                                <p class="text-muted">Post</p>
+                            </li>
+                            <li>
+                                <h4>575</h4>
+                                <p class="text-muted">Followers</p>
+                            </li>
+                            <li>
+                                <h4>23</h4>
+                                <p class="text-muted">Following</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong><span class="fa fa-info"></span> Profile
+                        Info</strong></div>
+                    <div class="panel-body">
+
+                        <div class="media">
+                            <form editable-form name="userInfo" onaftersave="saveUser()">
+                                <div class="media-body">
+                                    <ul class="list-unstyled list-info">
+                                        <li>
+                                            <span class="fa fa-user"></span>
+                                            <label>User name</label>
+                                            <span editable-text="user.username"
+                                                  e-name="name"
+                                                  e-form="userInfo">{{user.username || 'empty'}}</span>
+                                        </li>
+                                        <li>
+                                            <span class="fa fa-envelope"></span>
+                                            <label>Email</label>
+                                            <span editable-text="user.email"
+                                                  e-name="email"
+                                                  e-form="userInfo">{{user.email ||'lisa@doe.com'}}</span>
+                                        </li>
+                                        <li>
+                                            <span class="fa fa-home"></span>
+                                            <label>Address</label>
+                                            <span editable-text="user.address.street"
+                                                  e-name="addressStreet"
+                                                  e-form="userInfo">{{user.address.street || 'Street 123'}}</span>
+                                            <span editable-text="user.address.city"
+                                                  e-name="addressCity"
+                                                  e-form="userInfo">{{user.address.city || 'New York'}}
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <span class="fa fa-globe"></span>
+                                            <label>Website</label>
+                                            <span editable-text="user.website"
+                                                  e-name="website">{{user.website || 'wwww.site.com'}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="buttons">
+                                    <!-- button to show form -->
+                                    <button type="button" class="btn btn-primary" ng-click="userInfo.$show()"
+                                            ng-show="!userInfo.$visible"><i class="fa fa-pencil"></i> Edit
+                                    </button>
+                                    <!-- buttons to submit / cancel form -->
+                                    <span ng-show="userInfo.$visible">
+                                            <button type="submit" class="btn btn-success"
+                                                    ng-disabled="userInfo.$waiting">
+                                                 Save
+                                            </button>
+                                            <button type="button" class="btn btn-danger"
+                                                    ng-disabled="userInfo.$waiting"
+                                                    ng-click="userInfo.$cancel()">
+                                                Cancel
+                                            </button>
+                                        </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong><span class="fa fa-newspaper-o"></span> Posts</strong></div>
+                    <div class="panel-body posts-container">
+                        <div ng-repeat="post in user.posts">
+                            <div class="media post-list">
+                                <div class="media-left">
+                                    <a href="#/article_full/{{post.id}}">
+                                        <img src="http://placehold.it/70x70" class="media-object" width="80"
+                                             height="80">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <a href="#/article_full/{{post.id}}">
+                                        <h4 class="media-heading">
+                                            {{post.title}}
+                                        </h4>
+                                    </a>
+                                    <p>{{post.body}}</p>
+                                    <hr>
+                                    <div id="post-links">
+                                        <span class="soc-icon" ng-click="postInfo.liked = !postInfo.liked">
+                                            <i ng-if="!postInfo.liked"
+                                               class="fa fa-thumbs-o-up"
+                                               aria-hidden="true">
+
+                                            </i>
+                                            <i ng-if="postInfo.liked"
+                                               class="fa fa-thumbs-up like"
+                                               aria-hidden="true">
+                                            </i>
+                                            <strong>Like</strong>
+                                        </span>
+                                        <span class="soc-icon">
+                                            <i class="fa fa-comments" aria-hidden="true"></i>
+                                            <strong>Comment</strong>
+                                        </span>
+                                        <span class="soc-icon">
+                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                            <strong>Share</strong>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

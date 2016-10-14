@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-xs-12 col-md-12 col-lg-12">
         <div class="thumbnail">
-            <img ng-if="postInfo.id === 1 || postInfo.id === 3 || postInfo.id === 5 || postInfo.id === 7 || postInfo.id === 9"
+            <img ng-if="showImg"
                  id="post-img" class="img-thumbnail"
-                 ng-src="{{postInfo.url}}" width="400" height="200">
+                 ng-src="http://placehold.it/600x600" width="400" height="200">
             <div class="caption">
                 <div class="text-right">
-                    <a href="#/public/user/{{postInfo.user.username}}/{{postInfo.id}}"
+                    <a href="#/public/user/{{postInfo.user.username}}/{{postInfo.userId}}"
                        class="public-user-link">
                         <h5>-{{postInfo.user.name}}</h5>
                     </a>

@@ -169,8 +169,7 @@ module.exports = function(grunt){
 					"bower_components/font-awesome/css/*",
 					"bower_components/font-awesome/fonts/*",
 					"images/**/*",
-					"styles/fonts/**/*",
-					"styles/img/**/*",
+					"styles/images/**/*",
 					"views/**/*"
 					]
 				},{
