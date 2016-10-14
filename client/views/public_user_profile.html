@@ -1,0 +1,124 @@
+<div class="container">
+    <div class="page page-profile">
+
+        <div class="row">
+            <div class="col-md-6">
+
+                <div class="panel panel-profile">
+                    <div class="panel-heading text-center panel-background">
+                        <img alt="" src="images/profile.jpg" class="img-circle" width="110" height="110">
+                        <h3>{{user.username}}</h3>
+                        <p>Blogger</p>
+                    </div>
+                    <div class="list-justified-container">
+                        <ul class="list-justified text-center">
+                            <li>
+                                <h4>679</h4>
+                                <p class="text-muted">Post</p>
+                            </li>
+                            <li>
+                                <h4>575</h4>
+                                <p class="text-muted">Followers</p>
+                            </li>
+                            <li>
+                                <h4>23</h4>
+                                <p class="text-muted">Following</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Profile
+                        Info</strong></div>
+                    <div class="panel-body">
+                        <div class="media">
+                            <div class="media-body">
+                                <ul class="list-unstyled list-info">
+                                    <li>
+                                        <span class="icon glyphicon glyphicon-user"></span>
+                                        <label>User name</label>
+                                        {{userName}}
+                                    </li>
+                                    <li>
+                                        <span class="icon glyphicon glyphicon-envelope"></span>
+                                        <label>Email</label>
+                                        <p> lisa@doe.com</p>
+
+                                    </li>
+                                    <li>
+                                        <span class="icon glyphicon glyphicon-home"></span>
+                                        <label>Address</label>
+                                        <p>Street 123, Avenue 45, Country</p>
+
+                                    </li>
+                                    <li>
+                                        <span class="icon glyphicon glyphicon-earphone"></span>
+                                        <label>Contact</label>
+                                        <p>(+012) 345 6789</p>
+                                    </li>
+                                    <li>
+                                        <span class="icon glyphicon glyphicon-flag"></span>
+                                        <label>Nationality</label>
+                                        <p>Australia</p>
+                                    </li>
+                                    <li>
+                                        <span class="icon glyphicon glyphicon-globe"></span>
+                                        <label>Website</label>
+                                        <p>www.site.com</p>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><strong><span class="fa fa-newspaper-o"></span> Posts</strong></div>
+                    <div class="panel-body posts-container">
+                        <div ng-repeat="post in user.posts">
+                            <div class="media post-list">
+                                <div class="media-left">
+                                    <a href="#/article_full/{{post.id}}">
+                                        <img ng-src="{{post.thumbnailUrl}}" class="media-object" width="80" height="80">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                        {{post.title}}
+                                    </h4>
+                                    <p>{{post.body}}</p>
+                                    <hr>
+                                    <div id="post-links">
+                                        <span class="soc-icon" ng-click="postInfo.liked = !postInfo.liked">
+                                            <i ng-if="!postInfo.liked"
+                                                class="fa fa-thumbs-o-up"
+                                                aria-hidden="true">
+
+                                            </i>
+                                            <i ng-if="postInfo.liked"
+                                                class="fa fa-thumbs-up like"
+                                                aria-hidden="true">
+                                            </i>
+                                            <strong>Like</strong>
+                                        </span>
+                                        <span class="soc-icon">
+                                            <i class="fa fa-comments" aria-hidden="true"></i>
+                                            <strong>Comment</strong>
+                                        </span>
+                                        <span class="soc-icon">
+                                            <i class="fa fa-share-alt" aria-hidden="true"></i>
+                                            <strong>Share</strong>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-xs-12 col-md-12 col-lg-12">
+        <div class="thumbnail">
+            <img ng-if="postInfo.id === 1 || postInfo.id === 3 || postInfo.id === 5 || postInfo.id === 7 || postInfo.id === 9"
+                 id="post-img" class="img-thumbnail"
+                 ng-src="{{postInfo.url}}" width="400" height="200">
+            <div class="caption">
+                <div class="text-right">
+                    <a href="#/public/user/{{postInfo.user.username}}/{{postInfo.id}}"
+                       class="public-user-link">
+                        <h5>-{{postInfo.user.name}}</h5>
+                    </a>
+                </div>
+                <hr>
+                <h3>{{postInfo.title}}</h3>
+                <p>{{postInfo.body}}</p>
+                <br><br>
+                <div id="post-link">
+                    <a href="#/article_full/{{postInfo.id}}">Read More</a>
+                    <hr>
+                    <div id="post-links">
+                        <span class="soc-icon" ng-click="postInfo.liked = !postInfo.liked">
+                            <i ng-if="!postInfo.liked"
+                               class="fa fa-thumbs-o-up fa-lg"
+                               aria-hidden="true">
+                            </i>
+                            <i ng-if="postInfo.liked"
+                               class="fa fa-thumbs-up like fa-lg"
+                               aria-hidden="true">
+                            </i>
+                            <strong>Like</strong>
+                        </span>
+                        <span class="soc-icon"><i class="fa fa-comments fa-lg" aria-hidden="true"></i><strong>Comment</strong></span>
+                        <span class="soc-icon"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i><strong>Share</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

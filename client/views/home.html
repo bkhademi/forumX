@@ -1,3 +1,19 @@
 <div class="container">
-    <h1>Forum</h1>
+    <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <div ng-repeat="post in posts[0] track by $index">
+                <post-panel post-info="post"></post-panel>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <div ng-repeat="post in posts[1] track by $index">
+                <post-panel post-info="post"></post-panel>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <div ng-repeat="post in posts[2] track by $index">
+                <post-panel post-info="post"></post-panel>
+            </div>
+        </div>
+    </div>
 </div>

@@ -3,17 +3,28 @@
  */
  angular.module('forumX').factory('UserService',
  	['$http', 'API_URL',function($http, API_URL){
- 		var URL = API_URL + 'users?callback=JSON_CALLBACK'
+ 		var URL = API_URL + 'users'
  		factory = {};
  		factory.getAll = function(){
- 			return $http.jsonp(URL).then(function(response){
- 				var users = response.data;
+ 			return $http.get(URL)
+ 		}
+
+ 		factory.get = function(userId){
+ 			return $http.get(URL+'/'+userId)
+ 		}
+
+ 		factory.update = function(user){
+ 			var promise = $http.put(URL+'/'+user.id)
+
+ 			promise.then(function(response){
+ 				alert("update was successfull");
+ 			}, function(err){
+ 				alert("there was an error trying to update the user, Please try again",err);
  			})
+
+ 			return promise
  		}
 
- 		factory.getAllForUser = function(){
-
- 		}
 
  		return factory;
 

@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Forum X</title>
 
+    <!-- needs images, font... therefore can not be part of ui.css -->
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
 
     <!--Style Frameworks & Libraries-->
     <!-- build:css styles/ui.css -->
-    <link href="style/custom.css" rel="stylesheet">
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="bower_components/angular-bootstrap/ui-bootstrap-csp.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/0b7eaa0d3e.js"></script>
+    <link href="style/custom.css" rel="stylesheet">
     <!-- endbuild -->
 
 </head>
@@ -29,16 +32,18 @@
 
 <!-- build:js scripts/ui.js -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js" type="text/javascript"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
 <!-- endbuild -->
 
 <!-- build:js({.tmp,client}) scripts/app.js -->
 <script src="scripts/forumX.js" type="text/javascript"></script>
 <script src="scripts/controllers/home_ctrl.js" type="text/javascript"></script>
-<script src="scripts/directives/blog-panel.js" type="text/javascript"></script>
+<script src="scripts/directives/post-panel.js" type="text/javascript"></script>
+<script src="scripts/controllers/public_user_profile_ctrl.js" type="text/javascript"></script>
+<script src="scripts/controllers/article_full_ctrl.js" type="text/javascript"></script>
 <script src="scripts/services/UserService.js" type="text/javascript"></script>
 <script src="scripts/services/PostService.js" type="text/javascript"></script>
+<script src="scripts/services/CommentService.js" type="text/javascript"></script>
 <!-- endbuild -->
 </body>
 </html>

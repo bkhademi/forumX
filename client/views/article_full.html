@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-12- col-lg-8 col-lg-offset-2">
+            <div class="thumbnail">
+                <img id="post-img" class="img-thumbnail" ng-src="{{postInfo.url}}" width="100%">
+                <div class="caption">
+                    <div class="text-right">
+                        <a href="#/public/user/{{postInfo.user.username}}/{{postInfo.id}}"
+                           class="public-user-link">
+                            <h5>-{{postInfo.user.name}}</h5>
+                        </a>
+                    </div>
+                    <hr>
+                    <h2>{{postInfo.title}}</h2>
+                    <h5>{{postInfo.body}}</h5>
+                    <hr>
+                    <div id="post-links">
+                        <span class="soc-icon" ng-click="postInfo.liked = !postInfo.liked">
+                            <i ng-if="!postInfo.liked"
+                               class="fa fa-thumbs-o-up fa-lg"
+                               aria-hidden="true">
+                            </i>
+                            <i ng-if="postInfo.liked"
+                               class="fa fa-thumbs-up like fa-lg"
+                               aria-hidden="true">
+                            </i>
+                            <strong>Like</strong>
+                        </span>
+                        <span class="soc-icon"><i class="fa fa-comments fa-lg"
+                                                  aria-hidden="true"></i><strong>Comment</strong></span>
+                        <span class="soc-icon"><i class="fa fa-share-alt fa-lg"
+                                                  aria-hidden="true"></i><strong>Share</strong></span>
+                    </div>
+
+                </div>
+            </div>
+            <br>
+            <div class="thumbnail">
+                <strong><h4 style="padding: 8px 15px 3px"class="text-left">Comments</h4></strong>
+                <hr style="margin-bottom: 0px">
+                <div class="caption post-comments-container">
+                    <div ng-repeat="comment in postInfo.comments">
+                        <div class="media post-comment">
+                            <div class="media-left">
+                                <img src="http://placehold.it/70x70" class="media-object">
+                            </div>
+                            <div class="media-body">
+                                    <h5 class="text-muted text-left"> {{comment.email}}</h5>
+                                <hr>
+                                <h4 class="media-heading">{{comment.name}}</h4>
+                                <p>{{comment.body}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
