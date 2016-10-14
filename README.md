@@ -1,6 +1,8 @@
-# forumX
+# **forumX**
 
-*** To Run, Open a terminal in the root folder of the project and run the following commands:
+## **How to Run this Program**
+
+*** To Run, Open a terminal in the root folder of the project and run the following commands: ***
 
 ```shell
 
